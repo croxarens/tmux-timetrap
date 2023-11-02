@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-tmux bind-key A display-popup -t . -x C -y C "bash $CURRENT_DIR/scripts/select.sh"
-
-# TODO: List current SHEETS
-# TODO: Start a new tracking
-# TODO: Stop a tracking
-#
-# TODO: Display all trackings
+tmux bind-key A display-popup -t . -T '  Start Tracking Time  ' -x C -y C "bash $CURRENT_DIR/scripts/select.sh"
+tmux bind-key S display-popup -t . -T '  Stop Tracking Time  ' -x C -y C "bash $CURRENT_DIR/scripts/stop.sh"
