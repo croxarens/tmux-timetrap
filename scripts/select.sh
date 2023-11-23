@@ -11,7 +11,7 @@ tmpfile=$(mktemp $tmpfilepathname)
 #
 # Ignore the achived sheets
 # AND sheet NOT REGEXP '^_'
-query_entries="SELECT sheet || ' | ' || note FROM entries WHERE start >= date('now', '-40 days') AND sheet NOT REGEXP '^_' GROUP BY note ORDER BY id DESC;"
+query_entries="SELECT sheet || ' | ' || note FROM entries WHERE start >= date('now', '-40 days') AND sheet NOT REGEXP '^_' GROUP BY sheet, note ORDER BY id DESC;"
 list=$(sqlite3 -readonly $db_location "$query_entries")
 
 # Prompt the user for input and use fzf for interactive filtering
