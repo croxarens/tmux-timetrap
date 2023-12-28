@@ -1,6 +1,9 @@
 #!/bin/bash
 
 db_location="$HOME/.timetrap.db"
+if [ -f "$HOME/.timetrap.yml" ]; then
+  db_location=$(cat "$HOME/.timetrap.yml" | grep database | cut -d ':' -f 2|tr -d "\" ")
+fi
 
 # Create a temporary file to store fzf output
 tmpfilepathname='/tmp/timetrap_option.txt'
