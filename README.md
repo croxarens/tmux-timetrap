@@ -8,6 +8,7 @@ A wrapper for [**timetrap**](https://github.com/samg/timetrap) from TMUX.
 - Display in the status line the current tracked sheet and entry
 - Start tracking time from a past or new entrty in an existing or new sheet
 - Stop tracking time
+- Show a table with today's tracked time across all sheets and notes, including per-sheet totals and a global total
 
 ## Plugin Installation
 You need to have installed:
@@ -36,8 +37,11 @@ The referesh rate is 15 seconds by default in TMUX, so if you want refresh it mo
 
 ## Key bindings
 
-- `prefix` + `A` -> To start tracking an existing entity or a new entity.
-- `prefix` + `S` -> To stop tracking
+- `prefix` + `T` -> Open the Timetrap popup menu with shortcuts.
+- `prefix` + `T`, then `A` -> Start tracking an existing entity or a new one.
+- `prefix` + `T`, then `S` -> Stop tracking.
+- `prefix` + `T`, then `T` -> Show today's tracked time table.
+- `prefix` + `T`, then `Esc` -> Close the menu without running anything.
 
 **Please keep in mind**: When starting a new tracking, if the entry you want is not in the menu you can create a new one by typing the name of the sheet (even if new) folloing with a dot (.) and the name of entry `{sheet name}.{entity name}`.
 
