@@ -52,9 +52,7 @@ if [ -f "$HOME/.timetrap.yml" ]; then
 fi
 
 # Create a temporary file to store fzf output
-tmpfilepathname='/tmp/timetrap_option.txt'
-rm -f $tmpfilepathname
-tmpfile=$(mktemp $tmpfilepathname)
+tmpfile="$(mktemp "${TMPDIR:-/tmp}/timetrap_option.XXXXXX")"
 
 # Get the list of past entries per each sheet in the last 40 days.
 #

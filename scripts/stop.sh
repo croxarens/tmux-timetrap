@@ -52,9 +52,7 @@ if [ -f "$HOME/.timetrap.yml" ]; then
 fi
 
 # Create a temporary file to store fzf output
-tmpfilepathname='/tmp/timetrap_option.txt'
-rm -f $tmpfilepathname
-tmpfile=$(mktemp $tmpfilepathname)
+tmpfile="$(mktemp "${TMPDIR:-/tmp}/timetrap_option.XXXXXX")"
 
 query_entries="SELECT sheet || ' | ' || note FROM entries WHERE end IS NULL AND sheet NOT REGEXP '^_' GROUP BY note ORDER BY id DESC;"
 list=$(sqlite3 -readonly $db_location "$query_entries")
