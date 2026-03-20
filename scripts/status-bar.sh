@@ -64,4 +64,4 @@ do
     MSG="${MSG}[${SHEET}] ${NOTE}"
 done
 
-echo "$MSG"
+echo "$MSG "
